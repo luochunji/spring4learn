@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myBean" class="com.cjluo.beans.MyBean">
+        <property name="date" value="2018-05-01 10:10:32"/>
+    </bean>
+
+   <!-- <bean id="helloAware" class="com.cjluo.beans.HelloAware"/>
+
+    <bean id="hello" class="com.cjluo.beans.Hello"/>
+
+    <bean id="bfpp" class="com.cjluo.beans.config.ObscenityRemovingBeanFactoryPostProcessor">
+        <property name="obscenties">
+            <set>
+                <value>bollocks</value>
+                <value>winky</value>
+                <value>bum</value>
+                <value>Microsoft</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="simpleBean" class="com.cjluo.beans.SimpleBean">
+        <property name="connectionString" value="bollocks"/>
+        <property name="password" value="imaginecup"/>
+        <property name="username" value="Microsoft"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>message</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="eventListener" class="com.cjluo.beans.listener.EventListener"/>-->
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.cjluo.beans.convert.String2DateConverter"/>
+            </set>
+        </property>
+    </bean>
+</beans>
