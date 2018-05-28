@@ -14,7 +14,4 @@
         <property name="minIdle" value="1"/>
     </bean>
 
-    <bean id="userService" class="com.cjluo.jdbc.UserService">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
 </beans>
