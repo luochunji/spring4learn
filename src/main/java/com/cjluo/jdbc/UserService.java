@@ -28,4 +28,12 @@ public class UserService implements IUserService {
         List<User> list = jdbcTemplate.query("select * from user", new UserRowMapper());
         return list;
     }
+
+    public User query(int id) {
+        List<User> list = jdbcTemplate.query("select * from user where id = ?",
+                new Object[]{3},
+                new int[]{Types.INTEGER},
+                new UserRowMapper());
+        return list.size() > 0 ? list.get(0) : null;
+    }
 }

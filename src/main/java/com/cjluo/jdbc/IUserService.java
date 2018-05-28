@@ -12,4 +12,5 @@ public interface IUserService {
 
     List<User> listUsers();
 
+    User query(int id);
 }

@@ -32,4 +32,11 @@ public class JdbcTest {
             System.out.println(user);
         }
     }
+    @Test
+    public void queryTest(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-datasource.xml");
+        IUserService userService = (IUserService) ctx.getBean("userService");
+        User user = userService.query(3);
+        System.out.println(user);
+    }
 }
