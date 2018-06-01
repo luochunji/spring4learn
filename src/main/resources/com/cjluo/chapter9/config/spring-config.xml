@@ -10,8 +10,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.cjluo.chapter9.mapper.IUserMapper"/>
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--<property name="mapperInterface" value="com.cjluo.chapter9.mapper.IUserMapper"/>-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.cjluo.chapter9.mapper"/>
     </bean>
 </beans>

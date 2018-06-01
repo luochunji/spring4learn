@@ -12,6 +12,7 @@
         <property name="maxTotal" value="300"/>
         <property name="maxIdle" value="2"/>
         <property name="minIdle" value="1"/>
+        <property name="defaultAutoCommit" value="true"/>
     </bean>
 
 </beans>
