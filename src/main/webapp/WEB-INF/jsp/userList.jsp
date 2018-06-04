@@ -12,7 +12,7 @@
     <title>UserList</title>
 </head>
 <body>
-<c:forEach items="${userList}" var="user">
+<c:forEach items="${users}" var="user">
     <div>
         ${user.username}:${user.age}
     </div>
