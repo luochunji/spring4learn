@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- rmi 客户端配置 -->
+    <!--<bean id="myClient" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">-->
+    <!--<property name="serviceUrl" value="rmi://localhost:9999/helloRMI"/>-->
+    <!--<property name="serviceInterface" value="com.cjluo.chapter12.service.IHelloRMIService"/>-->
+    <!--</bean>-->
+
+    <!--httpInvoker 客户端配置-->
+    <bean id="remoteService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl" value="http://localhost:9000/springmvc/sayHello"/>
+        <property name="serviceInterface" value="com.cjluo.chapter12.service.IHttpInvokerService"/>
+    </bean>
+
+</beans>

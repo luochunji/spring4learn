@@ -3,13 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="/userlist.htm">userController</prop>
-            </props>
-        </property>
+    <!--<bean name="remoteService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">-->
+    <bean name="/sayHello" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="httpInvokerService"/>
+        <property name="serviceInterface" value="com.cjluo.chapter12.service.IHttpInvokerService"/>
     </bean>
 
-    <bean id="userController" class="com.cjluo.chapter11.controller.UserController"/>
+    <bean id="httpInvokerService" class="com.cjluo.chapter12.service.HttpInvokerService"/>
+
+    <!--<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+        <!--<property name="mappings">-->
+            <!--<props>-->
+                <!--<prop key="/userlist.htm">userController</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="userController" class="com.cjluo.chapter11.controller.UserController"/>-->
 </beans>
