@@ -11,7 +11,7 @@
 
     <!--httpInvoker 客户端配置-->
     <bean id="remoteService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
-        <property name="serviceUrl" value="http://localhost:9000/springmvc/sayHello"/>
+        <property name="serviceUrl" value="http://localhost:9000/springmvc/remote"/>
         <property name="serviceInterface" value="com.cjluo.chapter12.service.IHttpInvokerService"/>
     </bean>
 
